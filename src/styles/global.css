@@ -1,9 +1,29 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+/* Load the legacy config (content globs + Flowbite plugin) under Tailwind v4. */
+@config '../../tailwind.config.cjs';
+
+/* Tailwind v4 ships a refreshed OKLCH palette; pin amber to the exact hex
+   scale the Maintainerr app uses so the brand color doesn't shift on upgrade. */
+@theme {
+  --color-amber-50: #fffbeb;
+  --color-amber-100: #fef3c7;
+  --color-amber-200: #fde68a;
+  --color-amber-300: #fcd34d;
+  --color-amber-400: #fbbf24;
+  --color-amber-500: #f59e0b;
+  --color-amber-600: #d97706;
+  --color-amber-700: #b45309;
+  --color-amber-800: #92400e;
+  --color-amber-900: #78350f;
+  --color-amber-950: #451a03;
+}
 
 html,
 body {
   overflow-x: hidden;
-  overscroll-behavior: auto;
+  /* Dark backstop + no overscroll bounce: the page's visible background is a
+     position:fixed image, so on mobile the address-bar resize and rubber-band
+     overscroll would otherwise expose the transparent root as a white flicker. */
+  overscroll-behavior: none;
+  background-color: #000;
 }
