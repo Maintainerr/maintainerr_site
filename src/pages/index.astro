@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css'
+import { Image } from 'astro:assets'
 import Menu from '../components/Menu.astro'
 import Layout from '../layouts/Layout.astro'
 import Title from '../components/Title.astro'
@@ -15,15 +16,20 @@ import background from '../assets/background.png'
 <Layout>
   <div class="relative min-h-screen w-full">
     <!-- Background Image -->
-    <img
-      src={background.src}
+    <Image
+      src={background}
       alt=""
+      width={1344}
+      height={768}
+      format="webp"
+      quality={60}
+      loading="eager"
       class="fixed top-0 left-0 w-full h-full object-cover z-[-5]"
     />
 
     <!-- Gradient Overlay -->
     <div
-      class="absolute top-0 left-0 right-0 bottom-0 bg-gradient-to-b from-[#070a0f]/50 to-black z-[-4] h-[4000px] pointer-events-none"
+      class="fixed inset-0 bg-gradient-to-b from-[#070a0f]/60 to-black z-[-4] pointer-events-none"
     >
     </div>
     <Menu />

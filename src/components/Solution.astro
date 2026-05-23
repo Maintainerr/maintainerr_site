@@ -38,13 +38,13 @@ const inviteUrl = 'https://discord.maintainerr.info/'
           <a
             href="https://docs.maintainerr.info/installation"
             target="_blank"
-            class="text-amber-600 font-semibold bg-white rounded-lg p-4"
+            class="text-white font-semibold bg-amber-600 hover:bg-amber-500 transition-colors rounded-lg p-4"
             >Installation</a
           >
           <a
             href="https://docs.maintainerr.info/"
             target="_blank"
-            class="text-amber-600 font-semibold bg-white rounded-lg p-4"
+            class="text-white font-semibold bg-amber-600 hover:bg-amber-500 transition-colors rounded-lg p-4"
             >Documentation</a
           >
         </div>
@@ -55,13 +55,18 @@ const inviteUrl = 'https://discord.maintainerr.info/'
         <div
           class="w-full max-w-sm overflow-hidden rounded-lg bg-[#2b2d31] shadow-xl"
         >
-          <div class="h-20 bg-gradient-to-r from-amber-500 to-amber-300"></div>
+          <div
+            class="h-20 bg-gradient-to-r from-amber-600 via-amber-500 to-amber-800"
+          >
+          </div>
           <div class="px-5 pb-5">
             <img
               src={iconUrl ?? '/favicon.ico'}
               alt="Maintainerr Discord server icon"
               width="64"
               height="64"
+              loading="lazy"
+              decoding="async"
               class="-mt-8 h-16 w-16 rounded-2xl border-4 border-[#2b2d31] bg-[#2b2d31]"
             />
             <div class="mt-2 flex items-center gap-1.5">

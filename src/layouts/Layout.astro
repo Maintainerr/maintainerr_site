@@ -76,8 +76,11 @@ const siteLd = {
     <div class="relative min-h-screen w-full overflow-hidden">
       <slot />
     </div>
-    <script
-      src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"
-    ></script>
+    <script>
+      // Self-hosted + bundled by Vite, deferred as an ES module (no
+      // third-party CDN round-trip). initFlowbite() wires up the carousel.
+      import { initFlowbite } from 'flowbite'
+      initFlowbite()
+    </script>
   </body>
 </html>

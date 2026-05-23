@@ -43,5 +43,8 @@ Thumbs.db
 ehthumbs.db
 Desktop.ini
 
+# Playwright MCP scratch artifacts (snapshots, screenshots)
+.playwright-mcp/
+
 # Miscellaneous
 *.tsbuildinfo
