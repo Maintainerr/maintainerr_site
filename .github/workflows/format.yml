@@ -1,10 +1,10 @@
 name: Format
 
 on:
+  # PR-only: avoids duplicate runs and the credential-less checkout failure
+  # that push-event runs hit on non-default branches.
   pull_request:
     branches: [main]
-  push:
-    branches-ignore: [main]
   workflow_dispatch:
 
 concurrency:
