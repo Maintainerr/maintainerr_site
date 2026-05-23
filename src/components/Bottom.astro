@@ -76,7 +76,8 @@ import { Icon } from 'astro-icon/components'
           <div>
             <div class="font-bold text-lg mb-2">Manual Control</div>
             <p class="text-zinc-200 pr-4">
-              Manually add media items into or remove media from a collection
+              Manually add or remove media, and exclude items from a collection
+              even when they match a rule
             </p>
           </div>
         </div>
@@ -118,6 +119,27 @@ import { Icon } from 'astro-icon/components'
             <p class="text-zinc-200 pr-4">
               Set a number of days the collection will exist before its contents
               are deleted
+            </p>
+          </div>
+        </div>
+        <div>
+          <div>
+            <Icon name="solid/calendar-days" />
+            <style>
+              [data-icon='solid/calendar-days'] {
+                font-size: 2.5rem;
+                background-color: orange;
+                padding: 0.5rem;
+                border-radius: 8px;
+                margin-bottom: 2px;
+              }
+            </style>
+          </div>
+          <div>
+            <div class="font-bold text-lg mb-2">Deletion Calendar</div>
+            <p class="text-zinc-200 pr-4">
+              See exactly when scheduled deletions and *arr actions will run, in
+              a month or week calendar view.
             </p>
           </div>
         </div>
@@ -195,6 +217,111 @@ import { Icon } from 'astro-icon/components'
             <div class="font-bold text-lg mb-2">Tautulli Integration</div>
             <p class="text-zinc-200 pr-4">
               Use information and statistics from your Tautulli installation.
+            </p>
+          </div>
+        </div>
+        <div>
+          <div>
+            <Icon name="solid/chart-line" />
+            <style>
+              [data-icon='solid/chart-line'] {
+                font-size: 2.5rem;
+                background-color: orange;
+                padding: 0.5rem;
+                border-radius: 8px;
+                margin-bottom: 2px;
+              }
+            </style>
+          </div>
+          <div>
+            <div class="font-bold text-lg mb-2">Streamystats Integration</div>
+            <p class="text-zinc-200 pr-4">
+              Build rules from Streamystats watch data (Jellyfin) for sharper
+              cleanup decisions.
+            </p>
+          </div>
+        </div>
+        <div>
+          <div>
+            <Icon name="solid/bell" />
+            <style>
+              [data-icon='solid/bell'] {
+                font-size: 2.5rem;
+                background-color: orange;
+                padding: 0.5rem;
+                border-radius: 8px;
+                margin-bottom: 2px;
+              }
+            </style>
+          </div>
+          <div>
+            <div class="font-bold text-lg mb-2">Notifications</div>
+            <p class="text-zinc-200 pr-4">
+              Stay in the loop with alerts via Discord, Telegram, Slack, Email,
+              Gotify, Ntfy, Pushover, Pushbullet, LunaSea, and Webhooks.
+            </p>
+          </div>
+        </div>
+        <div>
+          <div>
+            <Icon name="solid/wand-magic-sparkles" />
+            <style>
+              [data-icon='solid/wand-magic-sparkles'] {
+                font-size: 2.5rem;
+                background-color: orange;
+                padding: 0.5rem;
+                border-radius: 8px;
+                margin-bottom: 2px;
+              }
+            </style>
+          </div>
+          <div>
+            <div class="font-bold text-lg mb-2">Poster Overlays</div>
+            <p class="text-zinc-200 pr-4">
+              Brand collection items with custom poster and title-card overlays,
+              like a "Leaving soon" badge, designed in a visual editor.
+            </p>
+          </div>
+        </div>
+        <div>
+          <div>
+            <Icon name="solid/image" />
+            <style>
+              [data-icon='solid/image'] {
+                font-size: 2.5rem;
+                background-color: orange;
+                padding: 0.5rem;
+                border-radius: 8px;
+                margin-bottom: 2px;
+              }
+            </style>
+          </div>
+          <div>
+            <div class="font-bold text-lg mb-2">Custom Collection Posters</div>
+            <p class="text-zinc-200 pr-4">
+              Upload your own artwork for a collection. Maintainerr pushes it to
+              your media server and restores it on recreation.
+            </p>
+          </div>
+        </div>
+        <div>
+          <div>
+            <Icon name="solid/right-left" />
+            <style>
+              [data-icon='solid/right-left'] {
+                font-size: 2.5rem;
+                background-color: orange;
+                padding: 0.5rem;
+                border-radius: 8px;
+                margin-bottom: 2px;
+              }
+            </style>
+          </div>
+          <div>
+            <div class="font-bold text-lg mb-2">Switch Media Servers</div>
+            <p class="text-zinc-200 pr-4">
+              Move between Plex, Jellyfin, and Emby, with automatic rule
+              migration.
             </p>
           </div>
         </div>
