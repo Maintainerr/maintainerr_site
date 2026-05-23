@@ -1,0 +1,5 @@
+# Code owners for maintainerr_site.
+# Changes to protected branches require a review from a code owner
+# (admins may bypass). Mirrors the Maintainerr app repo.
+
+*   @ydkmlt84 @enoch85

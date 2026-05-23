@@ -14,6 +14,12 @@ permissions:
   pages: write
   id-token: write
 
+# Serialize deploys so rapid merges (e.g. Dependabot auto-merge) don't race;
+# never cancel an in-progress deploy mid-publish.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
 jobs:
   build:
     runs-on: ubuntu-latest
