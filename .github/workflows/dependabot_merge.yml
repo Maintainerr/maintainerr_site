@@ -1,9 +1,9 @@
 name: Dependabot auto-merge
 on: pull_request_target
 
+# The minted App token (below) performs the writes; the default token only reads.
 permissions:
-  contents: write
-  pull-requests: write
+  contents: read
 
 jobs:
   dependabot:
@@ -16,6 +16,13 @@ jobs:
         with:
           client-id: ${{ secrets.MERGE_APP_ID }}
           private-key: ${{ secrets.MERGE_APP_KEY }}
+          # Least privilege: scope the minted token to THIS repo, with only the
+          # permissions auto-merge needs — not the App's org-wide
+          # actions/issues write across all repositories.
+          owner: ${{ github.repository_owner }}
+          repositories: ${{ github.event.repository.name }}
+          permission-contents: write
+          permission-pull-requests: write
 
       - name: Dependabot metadata
         id: metadata
