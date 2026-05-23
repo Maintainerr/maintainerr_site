@@ -8,3 +8,11 @@
 html {
   background-color: #000;
 }
+
+/* Prevent sideways scrolling on mobile (off-screen carousel slides, etc.).
+   `clip` clips the overflow WITHOUT creating a scroll container, so — unlike
+   `overflow-x: hidden` — it doesn't break the sticky nav. */
+html,
+body {
+  overflow-x: clip;
+}
