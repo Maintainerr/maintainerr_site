@@ -1,0 +1,38 @@
+name: Build Test
+
+on:
+  # Verify every PR targeting main builds cleanly before it can be merged.
+  pull_request:
+    branches: [main]
+  # Give feedback on feature branches too (main pushes are covered by Deploy).
+  push:
+    branches-ignore: [main]
+  workflow_dispatch:
+
+# Cancel superseded runs on the same branch/PR.
+concurrency:
+  group: build-test-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: npm ci + astro build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies (clean, from lockfile)
+        run: npm ci
+
+      - name: Build site
+        run: npm run build
+
+      - name: Verify build output
+        run: test -f dist/index.html && test -f dist/sitemap-index.xml

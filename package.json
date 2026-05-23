@@ -6,17 +6,23 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
   "dependencies": {
+    "@astrojs/sitemap": "^3.7.2",
     "astro": "^5.18.1",
     "astro-icon": "^1.1.5",
-    "flowbite": "^3.1.2"
+    "flowbite": "^3.1.2",
+    "sharp": "^0.34.5"
   },
   "devDependencies": {
     "@astrojs/tailwind": "^6.0.2",
     "autoprefixer": "^10.5.0",
     "postcss": "^8.5.15",
+    "prettier": "^3.8.3",
+    "prettier-plugin-astro": "^0.14.1",
     "tailwindcss": "^3.4.19"
   }
 }

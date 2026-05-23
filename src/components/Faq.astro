@@ -1,0 +1,51 @@
+---
+const faqs = [
+  {
+    q: 'What is Maintainerr?',
+    a: 'Maintainerr is a free, open-source, self-hosted app that automatically finds and removes unwatched or unwanted movies and TV shows from Plex, Jellyfin, and Emby using customizable rules.',
+  },
+  {
+    q: 'Can Maintainerr automatically delete movies and shows from my media server?',
+    a: 'Yes. Maintainerr groups stale media into rule-based collections and can delete the files from disk, unmonitor them in Radarr and Sonarr, and clear the original requests from Seerr.',
+  },
+  {
+    q: 'How does Maintainerr compare to other media-cleanup tools?',
+    a: 'Maintainerr is free, open-source, and was one of the original rule-based media-cleanup tools for Plex, later adding Jellyfin and Emby support — newer utilities such as Reclaimarr and Deleterr tackle the same problem. Maintainerr offers a visual rule builder, "leaving soon" poster overlays, notifications, and a deletion calendar.',
+  },
+  {
+    q: 'How does Maintainerr decide which media to remove?',
+    a: 'You build rules from parameters across Plex, Jellyfin, Emby, Radarr, Sonarr, Tautulli, and Seerr — such as last watch date, release date, rating, file size, or request status — to target exactly the unwatched media you want to clean up.',
+  },
+]
+
+const faqLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+}
+---
+
+<section class="px-4 max-w-7xl m-auto mb-8">
+  <div class="bg-zinc-800 rounded-lg p-8 md:p-12">
+    <h2
+      class="text-transparent font-extrabold text-3xl mb-2 bg-clip-text bg-gradient-to-br from-amber-600 to-amber-400 tracking-tight"
+    >
+      Frequently asked questions
+    </h2>
+    <div class="mt-8 max-w-4xl space-y-7">
+      {
+        faqs.map((f) => (
+          <div>
+            <h3 class="font-bold text-lg text-white">{f.q}</h3>
+            <p class="mt-1 text-zinc-300 leading-relaxed">{f.a}</p>
+          </div>
+        ))
+      }
+    </div>
+    <script type="application/ld+json" set:html={JSON.stringify(faqLd)} />
+  </div>
+</section>
