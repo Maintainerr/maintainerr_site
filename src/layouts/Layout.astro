@@ -25,8 +25,7 @@ const softwareLd = {
   url: site.href,
   image: imageUrl,
   softwareHelp: 'https://docs.maintainerr.info',
-  license:
-    'https://github.com/Maintainerr/Maintainerr/blob/main/LICENSE',
+  license: 'https://github.com/Maintainerr/Maintainerr/blob/main/LICENSE',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
 }
 const siteLd = {
@@ -66,10 +65,7 @@ const siteLd = {
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={imageUrl} />
 
-    <script
-      type="application/ld+json"
-      set:html={JSON.stringify(softwareLd)}
-    />
+    <script type="application/ld+json" set:html={JSON.stringify(softwareLd)} />
     <script type="application/ld+json" set:html={JSON.stringify(siteLd)} />
   </head>
   <body class="m-0 w-full h-full">

@@ -9,10 +9,17 @@ try {
   )
   if (res.ok) {
     const d = await res.json()
-    online = typeof d.approximate_presence_count === 'number' ? d.approximate_presence_count : null
-    members = typeof d.approximate_member_count === 'number' ? d.approximate_member_count : null
+    online =
+      typeof d.approximate_presence_count === 'number'
+        ? d.approximate_presence_count
+        : null
+    members =
+      typeof d.approximate_member_count === 'number'
+        ? d.approximate_member_count
+        : null
     const g = d.guild ?? {}
-    if (g.id && g.icon) iconUrl = `https://cdn.discordapp.com/icons/${g.id}/${g.icon}.png`
+    if (g.id && g.icon)
+      iconUrl = `https://cdn.discordapp.com/icons/${g.id}/${g.icon}.png`
   }
 } catch {
   // ignore — render the card without live counts

@@ -1,0 +1,8 @@
+dist/
+node_modules/
+.astro/
+.playwright-mcp/
+package-lock.json
+public/
+src/icons/
+*.svg

@@ -24,21 +24,39 @@ import Calendar from '../assets/screenshots/Calendar.png'
       <p>
         Maintainerr helps you find those outlying media items that have just
         been sitting there in your library. If you use Seerr, it is easy for
-        your users to start downloading everything they can think of.
-        Sometimes, they don't even watch it.
+        your users to start downloading everything they can think of. Sometimes,
+        they don't even watch it.
       </p>
       <hr class="w-full h-2 my-4" />
 
       <p>
         Utilize multiple parameters across
-        <a href="https://www.plex.tv" style="color:#f59e0b" target="_blank">Plex</a>,
-        <a href="https://jellyfin.org" style="color:#f59e0b" target="_blank">Jellyfin</a>,
-        <a href="https://emby.media" style="color:#f59e0b" target="_blank">Emby</a>,
-        <a href="https://sonarr.tv" style="color:#f59e0b" target="_blank">Sonarr</a>,
-        <a href="https://radarr.video" style="color:#f59e0b" target="_blank">Radarr</a>,
-        <a href="https://tautulli.com" style="color:#f59e0b" target="_blank">Tautulli</a>,
-        <a href="https://github.com/fredrikburmester/streamystats" style="color:#f59e0b" target="_blank">Streamystats</a>, and
-        <a href="https://seerr.dev" style="color:#f59e0b" target="_blank">Seerr</a>
+        <a href="https://www.plex.tv" style="color:#f59e0b" target="_blank"
+          >Plex</a
+        >,
+        <a href="https://jellyfin.org" style="color:#f59e0b" target="_blank"
+          >Jellyfin</a
+        >,
+        <a href="https://emby.media" style="color:#f59e0b" target="_blank"
+          >Emby</a
+        >,
+        <a href="https://sonarr.tv" style="color:#f59e0b" target="_blank"
+          >Sonarr</a
+        >,
+        <a href="https://radarr.video" style="color:#f59e0b" target="_blank"
+          >Radarr</a
+        >,
+        <a href="https://tautulli.com" style="color:#f59e0b" target="_blank"
+          >Tautulli</a
+        >,
+        <a
+          href="https://github.com/fredrikburmester/streamystats"
+          style="color:#f59e0b"
+          target="_blank">Streamystats</a
+        >, and
+        <a href="https://seerr.dev" style="color:#f59e0b" target="_blank"
+          >Seerr</a
+        >
         to find unwatched/unwanted media, and get rid of it.
       </p>
     </div>
@@ -213,10 +231,10 @@ import Calendar from '../assets/screenshots/Calendar.png'
 
   <script>
     const lightbox = document.getElementById(
-      'screenshot-lightbox'
+      'screenshot-lightbox',
     ) as HTMLDialogElement | null
     const lightboxImg = document.getElementById(
-      'screenshot-lightbox-img'
+      'screenshot-lightbox-img',
     ) as HTMLImageElement | null
     const carousel = document.getElementById('default-carousel')
     const images = Array.from(carousel?.querySelectorAll('img') ?? [])
@@ -234,7 +252,7 @@ import Calendar from '../assets/screenshots/Calendar.png'
       img.addEventListener('click', () => {
         show(i)
         lightbox?.showModal()
-      })
+      }),
     )
 
     document
