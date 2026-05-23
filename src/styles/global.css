@@ -1,9 +1,10 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+/* Load the legacy config (content globs + Flowbite plugin) under Tailwind v4. */
+@config '../../tailwind.config.cjs';
 
-html,
-body {
-  overflow-x: hidden;
-  overscroll-behavior: auto;
+/* Black canvas backstop so the fixed background image never flashes white on
+   mobile (address-bar resize / overscroll). Set on <html> only — setting it on
+   <body> would paint over the z-index:-5 background image and hide it. */
+html {
+  background-color: #000;
 }
