@@ -10,13 +10,28 @@ import mainSs from '../assets/screenshots/Collections.png'
   about your precious hard drive space being taken up by media, that isn't even
   being watched.
 </p>
-<div class="max-w-7xl px-3 flex items-center m-auto">
+<div class="max-w-7xl px-4 flex items-center justify-center m-auto">
   <Image
-    class="rounded-lg shadow-lg"
+    id="hero-screenshot"
+    class="rounded-lg shadow-lg opacity-0 transition-opacity duration-700"
     src={mainSs}
     alt="Main Screenshot of Maintainerr"
     width={1280}
     height={800}
     loading="eager"
+    decoding="async"
   />
 </div>
+
+<script>
+  // Hold the hero screenshot hidden until it has fully decoded, then fade it
+  // in — avoids the white half-loaded flash on first paint.
+  const hero = document.getElementById(
+    'hero-screenshot',
+  ) as HTMLImageElement | null
+  if (hero) {
+    const reveal = () => hero.classList.remove('opacity-0')
+    if (hero.complete && hero.naturalWidth > 0) reveal()
+    else hero.addEventListener('load', reveal, { once: true })
+  }
+</script>
