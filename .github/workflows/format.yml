@@ -11,6 +11,10 @@ concurrency:
   group: format-${{ github.ref }}
   cancel-in-progress: true
 
+# Least privilege: linting only needs to read the repo.
+permissions:
+  contents: read
+
 jobs:
   prettier:
     name: prettier --check
