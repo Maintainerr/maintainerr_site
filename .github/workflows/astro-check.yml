@@ -1,0 +1,37 @@
+name: Astro Check
+
+on:
+  # PR-only: avoids duplicate runs and the credential-less checkout failure
+  # that push-event runs hit on non-default branches.
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+# Cancel superseded runs on the same branch/PR.
+concurrency:
+  group: astro-check-${{ github.ref }}
+  cancel-in-progress: true
+
+# Least privilege: type checking only needs to read the repo.
+permissions:
+  contents: read
+
+jobs:
+  check:
+    name: astro check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Set up Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies (clean, from lockfile)
+        run: npm ci
+
+      - name: Type check and diagnostics
+        run: npm run check
