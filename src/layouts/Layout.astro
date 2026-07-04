@@ -65,8 +65,16 @@ const siteLd = {
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={imageUrl} />
 
-    <script type="application/ld+json" set:html={JSON.stringify(softwareLd)} />
-    <script type="application/ld+json" set:html={JSON.stringify(siteLd)} />
+    <script
+      is:inline
+      type="application/ld+json"
+      set:html={JSON.stringify(softwareLd)}
+    />
+    <script
+      is:inline
+      type="application/ld+json"
+      set:html={JSON.stringify(siteLd)}
+    />
   </head>
   <body class="m-0 w-full h-full">
     <div class="relative min-h-screen w-full">
