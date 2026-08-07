@@ -181,8 +181,29 @@ import { Icon } from 'astro-icon/components'
           <div>
             <div class="font-bold text-lg mb-2">*arr Integration</div>
             <p class="text-zinc-200 pr-4">
-              Set Radarr and Sonarr to either remove or unmonitor media in the
-              collection
+              Set Radarr, Sonarr, and Sportarr to remove, unmonitor, or change
+              the quality profile of media in the collection
+            </p>
+          </div>
+        </div>
+        <div>
+          <div>
+            <Icon name="solid/download" />
+            <style>
+              [data-icon='solid/download'] {
+                font-size: 2.5rem;
+                background-color: orange;
+                padding: 0.5rem;
+                border-radius: 8px;
+                margin-bottom: 2px;
+              }
+            </style>
+          </div>
+          <div>
+            <div class="font-bold text-lg mb-2">Download Client</div>
+            <p class="text-zinc-200 pr-4">
+              Delete the underlying files from your download client
+              (qBittorrent) when a collection is cleaned up.
             </p>
           </div>
         </div>
@@ -260,6 +281,27 @@ import { Icon } from 'astro-icon/components'
             <p class="text-zinc-200 pr-4">
               See Jellyfin watch statistics from your Streamystats server inside
               Maintainerr.
+            </p>
+          </div>
+        </div>
+        <div>
+          <div>
+            <Icon name="solid/gauge" />
+            <style>
+              [data-icon='solid/gauge'] {
+                font-size: 2.5rem;
+                background-color: orange;
+                padding: 0.5rem;
+                border-radius: 8px;
+                margin-bottom: 2px;
+              }
+            </style>
+          </div>
+          <div>
+            <div class="font-bold text-lg mb-2">Tracearr Integration</div>
+            <p class="text-zinc-200 pr-4">
+              Build rules from Tracearr watch history across Plex, Jellyfin, and
+              Emby.
             </p>
           </div>
         </div>
