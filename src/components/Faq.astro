@@ -31,25 +31,21 @@ const faqLd = {
 
 <section class="px-4 max-w-7xl m-auto mb-8">
   <div class="bg-zinc-800 rounded-lg p-8 md:p-12">
-    <h2
-      class="text-transparent font-extrabold text-3xl mb-2 bg-clip-text bg-gradient-to-br from-amber-600 to-amber-400 tracking-tight"
-    >
+    <h2 class="text-transparent font-extrabold text-3xl mb-2 bg-clip-text bg-gradient-to-br from-amber-600 to-amber-400 tracking-tight">
       Frequently asked questions
     </h2>
     <div class="mt-8 max-w-4xl space-y-7">
-      {
-        faqs.map((f) => (
-          <div>
-            <h3 class="font-bold text-lg text-white">{f.q}</h3>
-            <p class="mt-1 text-zinc-300 leading-relaxed">{f.a}</p>
-          </div>
-        ))
-      }
+      {faqs.map((f) => (
+        <div>
+          <h3 class="font-bold text-lg text-white">{f.q}</h3>
+          <p class="mt-1 text-zinc-300 leading-relaxed">{f.a}</p>
+        </div>
+      ))}
     </div>
     <script
       is:inline
       type="application/ld+json"
       set:html={JSON.stringify(faqLd)}
-    />
+    ></script>
   </div>
 </section>
