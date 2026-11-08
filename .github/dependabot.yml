@@ -4,11 +4,21 @@ updates:
     directory: '/'
     schedule:
       interval: daily
+    # Everything auto-merges unreviewed, so skip releases younger than 3 days
+    # (hijacked publishes are usually pulled within hours). Security updates
+    # ignore this.
+    cooldown:
+      default-days: 3
     groups:
       astro:
         patterns:
           - 'astro'
           - '@astrojs/*'
+      # @tailwindcss/vite pins tailwindcss exactly; bump them together.
+      tailwind:
+        patterns:
+          - 'tailwindcss'
+          - '@tailwindcss/*'
 
   - package-ecosystem: 'github-actions'
     directory: '/'

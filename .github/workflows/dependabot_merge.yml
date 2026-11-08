@@ -24,15 +24,9 @@ jobs:
           permission-contents: write
           permission-pull-requests: write
 
-      - name: Dependabot metadata
-        id: metadata
-        uses: dependabot/fetch-metadata@v3.1.0
-        with:
-          github-token: '${{ steps.app-token.outputs.token }}'
-          skip-commit-verification: true
-
+      # Majors included: the required checks are the gate, so nothing waits
+      # on a human. A major that breaks the build stays open with red checks.
       - name: Approve PR + merge after required checks pass
-        if: ${{ steps.metadata.outputs.update-type != 'version-update:semver-major' }}
         run: |
           set -euo pipefail
           review_decision=$(gh pr view "$PR_URL" --json reviewDecision -q .reviewDecision)
