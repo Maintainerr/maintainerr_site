@@ -33,5 +33,6 @@ jobs:
       - name: Install dependencies (clean, from lockfile)
         run: npm ci
 
-      - name: Type check and diagnostics
+      # Keep the job name: "astro check" is a required status check on main.
+      - name: Type check .astro files (tsc + content mapper)
         run: npm run check

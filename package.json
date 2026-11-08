@@ -6,7 +6,7 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "check": "astro check",
+    "check": "astro sync && tsc --noEmit --runExternalCode",
     "astro": "astro",
     "format": "prettier --write .",
     "format:check": "prettier --check ."
@@ -19,11 +19,11 @@
     "sharp": "^0.35.5"
   },
   "devDependencies": {
-    "@astrojs/check": "^0.9.12",
+    "@astrojs/ts-content-mapper": "^0.2.0",
     "@tailwindcss/vite": "^4.3.5",
     "prettier": "^3.9.10",
     "prettier-plugin-astro": "^1.1.2",
     "tailwindcss": "^4.3.5",
-    "typescript": "^6.0.3"
+    "typescript": "^7.1.0-beta"
   }
 }

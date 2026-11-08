@@ -9,11 +9,19 @@ updates:
     # ignore this.
     cooldown:
       default-days: 3
+    ignore:
+      # TypeScript nightlies (7.1.0-dev.*) sort above 7.1.0-beta in semver.
+      # Allow betas, RCs and stable releases only.
+      - dependency-name: 'typescript'
+        versions: ['>=7.1.0-dev <7.1.0-rc']
     groups:
+      # typescript moves with @astrojs/ts-content-mapper, which hooks into
+      # tsc to type-check .astro files.
       astro:
         patterns:
           - 'astro'
           - '@astrojs/*'
+          - 'typescript'
       # @tailwindcss/vite pins tailwindcss exactly; bump them together.
       tailwind:
         patterns:
